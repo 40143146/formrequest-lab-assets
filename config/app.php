@@ -148,7 +148,8 @@ return [
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
 
-        Recca0120\LaravelTracy\ServiceProvider::class,
+        //關閉此除錯功能才可以顯示錯誤的畫面
+        //Recca0120\LaravelTracy\ServiceProvider::class,
         Recca0120\Terminal\ServiceProvider::class,
         Collective\Html\HtmlServiceProvider::class,
 

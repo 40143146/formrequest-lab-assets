@@ -62,6 +62,17 @@ class PostsController extends Controller
     {
         $post = \App\Post::find($id);
 
+        //顯示錯誤畫面
+        //記得要關掉app.php 內的 Recca0120\LaravelTracy\ServiceProvider::class
+        //可新增錯誤畫面
+        // if(is_null($post)){
+        //     abort(404);
+        // }
+        //另一種方法
+        if(is_null($post)){
+            return redirect()->route('posts.index')->with('message','Not Found!!');
+        }
+
         $post->page_view += 1;
         $post->save();
 

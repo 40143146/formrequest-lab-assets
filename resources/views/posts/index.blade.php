@@ -28,6 +28,12 @@
             <a href="{{ route('posts.create') }}" class="btn btn-primary" role="button">新增</a>
         </div>
 
+        @if(session('message'))
+        <div class="col-md-12">
+            {{ session('message') }}
+        </div>
+        @endif
+
             @foreach($posts as $post)
             <div class="post-preview">
                 <a href="{{ route('posts.show', $post->id) }}">
