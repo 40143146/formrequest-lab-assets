@@ -68,10 +68,13 @@ class PostsController extends Controller
         // if(is_null($post)){
         //     abort(404);
         // }
+        
         //另一種方法
+        //跳轉錯誤畫面
         if(is_null($post)){
             return redirect()->route('posts.index')->with('message','Not Found!!');
         }
+        
 
         $post->page_view += 1;
         $post->save();
